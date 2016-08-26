@@ -46,6 +46,11 @@ import { EventEmitter } from './EventEmitter.js';
 
     'use strict';
 
+    // Let it work inside Node.js for automated testing purposes.
+    if (typeof document == 'undefined') {
+      var document = null;
+    }
+
     /**
      * Encapsulates the logic for handling compositionstart, compositionupdate and compositionend
      * events, displaying the in-progress composition to the UI and forwarding the final composition
