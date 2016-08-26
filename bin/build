@@ -6,9 +6,11 @@ mkdir -p $BUILD_DIR
 
 echo "Building xterm.js into $BUILD_DIR..."
 
-# Build ES6 modules into UMD module
+# Build ES6 modules into
 echo "  - Building $BUILD_DIR/xterm.js..."
-./node_modules/.bin/rollup -i src/xterm.js -o $BUILD_DIR/xterm.js -f umd
+./node_modules/.bin/browserify src/xterm.js -s xterm -t [ babelify --presets [ es2015 ] ] --debug | \
+node_modules/.bin/derequire | \
+node_modules/.bin/exorcist $BUILD_DIR/xterm.js.map > $BUILD_DIR/xterm.js
 echo "    OK."
 
 # Copy CSS into $BUILD_DIR

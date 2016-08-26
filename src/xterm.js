@@ -33,25 +33,6 @@
 
 import { EventEmitter } from './EventEmitter.js';
 
-(function (xterm) {
-    if (typeof exports === 'object' && typeof module === 'object') {
-        /*
-         * CommonJS environment
-         */
-        module.exports = xterm.call(this);
-    } else if (typeof define == 'function') {
-        /*
-         * Require.js is available
-         */
-        define([], xterm.bind(window));
-    } else {
-        /*
-         * Plain browser environment
-         */
-        window.Xterm = xterm.call(window);
-        window.Terminal = window.Xterm; /* Backwards compatibility with term.js */
-    }
-})(function() {
     /**
      * Terminal Emulation References:
      *   http://vt100.net/
@@ -64,13 +45,6 @@ import { EventEmitter } from './EventEmitter.js';
      */
 
     'use strict';
-
-    /**
-     * Shared
-     */
-
-    var window = this, document = this.document;
-
 
     /**
      * Encapsulates the logic for handling compositionstart, compositionupdate and compositionend
@@ -5171,10 +5145,6 @@ import { EventEmitter } from './EventEmitter.js';
       return w1 !== w2;
     }
 
-    var String = this.String;
-    var setTimeout = this.setTimeout;
-    var setInterval = this.setInterval;
-
     function indexOf(obj, el) {
       var i = obj.length;
       while (i--) {
@@ -5383,6 +5353,4 @@ import { EventEmitter } from './EventEmitter.js';
     Terminal.off = off;
     Terminal.cancel = cancel;
 
-
-    return Terminal;
-});
+export { Terminal };
