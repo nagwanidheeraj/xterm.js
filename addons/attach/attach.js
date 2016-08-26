@@ -21,10 +21,12 @@
     /*
      * Plain browser environment
      */
-    attach(window.xterm.Terminal);
+    attach(window.xterm);
   }
-})(function (Xterm) {
+})(function (xterm) {
   'use strict';
+
+  var Xterm = xterm.Terminal;
 
   /**
    * This module provides methods for attaching a terminal to a WebSocket

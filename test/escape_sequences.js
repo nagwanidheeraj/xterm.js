@@ -2,7 +2,7 @@ var glob = require('glob');
 var fs = require('fs');
 var pty = require('pty.js');
 var sleep = require('sleep');
-var Terminal = require('../src/xterm');
+var Terminal = require('../src/xterm').Terminal;
 
 var CONSOLE_LOG = console.log;
 
@@ -27,7 +27,7 @@ function pty_write_read(s) {
   return b.toString('utf8', 0, bytes);
 }
 
-// make sure raw pty is at x=0 and has no pending data 
+// make sure raw pty is at x=0 and has no pending data
 function pty_reset() {
     pty_write_read('\r\n');
 }

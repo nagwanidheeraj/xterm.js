@@ -26,9 +26,12 @@
     /*
      * Plain browser environment
      */
-    fit(window.xterm.Terminal);
+    fit(window.xterm);
   }
-})(function (Xterm) {
+})(function (xterm) {
+
+  var Xterm = xterm.Terminal;
+
   /**
    * This module provides methods for fitting a terminal's size to a parent container.
    *

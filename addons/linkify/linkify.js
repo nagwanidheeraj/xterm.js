@@ -13,10 +13,12 @@
     /*
      * Plain browser environment
      */
-    linkify(window.xterm.Terminal);
+    linkify(window.xterm);
   }
-})(function (Xterm) {
+})(function (xterm) {
   'use strict';
+
+  var Xterm = xterm.Terminal;
 
   /**
    * This module provides methods for convertings valid URL substrings

@@ -25,9 +25,12 @@
     /*
      * Plain browser environment
      */
-    fullscreen(window.xterm.Terminal);
+    fullscreen(window.xterm);
   }
-})(function (Xterm) {
+})(function (xterm) {
+
+  var Xterm = xterm.Terminal;
+
   var exports = {};
 
   exports.toggleFullScreen = function (term, fullscreen) {
