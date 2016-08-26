@@ -44,12 +44,8 @@ import { EventEmitter } from './EventEmitter.js';
      *   http://linux.die.net/man/7/urxvt
      */
 
-    'use strict';
-
     // Let it work inside Node.js for automated testing purposes.
-    if (typeof document == 'undefined') {
-      var document = null;
-    }
+    var document = (typeof document == 'undefined') ? null : document;
 
     /**
      * Encapsulates the logic for handling compositionstart, compositionupdate and compositionend

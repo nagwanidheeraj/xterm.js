@@ -1,5 +1,0 @@
-#! /usr/bin/env sh
-
-# Watch for file changes inside the `src` and `addons` directories.
-# Every time a file changes, then build xterm.js and restart the demo server.
-node_modules/.bin/nodemon --watch src --watch addons --exec bash -c "./bin/build && node demo/app"

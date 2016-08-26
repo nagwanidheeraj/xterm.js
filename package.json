@@ -28,7 +28,7 @@
     "sleep": "^3.0.1"
   },
   "scripts": {
-    "start": "./bin/demo-server",
+    "start": "node_modules/.bin/nodemon --watch src --watch addons --exec bash -c './bin/build && node demo/app'",
     "test": "./bin/test",
     "build:docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "build": "./bin/build"
