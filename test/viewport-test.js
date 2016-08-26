@@ -44,7 +44,6 @@ describe('Viewport', function () {
 
   describe('Public API', function () {
     it('should define Viewport.prototype.onWheel', function () {
-      console.log(Terminal.Viewport.prototype.onWheel);
       assert.isDefined(Terminal.Viewport.prototype.onWheel);
     });
     it('should define Viewport.prototype.setApplicationMode', function () {
