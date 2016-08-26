@@ -1,0 +1,17 @@
+#! /usr/bin/env sh
+
+BUILD_DIR=${BUILD_DIR-build}
+
+mkdir -p $BUILD_DIR
+
+echo "Building xterm.js into $BUILD_DIR..."
+
+# Build ES6 modules into UMD module
+echo "  - Building $BUILD_DIR/xterm.js..."
+./node_modules/.bin/rollup -i src/xterm.js -o $BUILD_DIR/xterm.js -f umd
+echo "    OK."
+
+# Copy CSS into $BUILD_DIR
+echo "  - Building $BUILD_DIR/xterm.css..."
+cp src/xterm.css $BUILD_DIR/xterm.css
+echo "    OK."

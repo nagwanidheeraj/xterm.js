@@ -19,11 +19,13 @@
     "mocha": "2.5.3",
     "pty.js": "0.3.1",
     "sleep": "^3.0.1",
-    "rollup": "0.34.10"
+    "rollup": "0.34.10",
+    "nodemon": "1.10.2"
   },
   "scripts": {
-    "start": "node demo/app",
+    "start": "./bin/demo-server",
     "test": "mocha --recursive",
-    "build:docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "build:docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "build": "./bin/build"
   }
 }
